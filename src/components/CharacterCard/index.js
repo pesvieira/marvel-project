@@ -11,20 +11,24 @@ import {
 
 const CharacterCard = ({ character }) => {
   const history = useHistory();
+
   const { id, name, thumbnail } = character;
-  const img_url = thumbnail.path + "." + thumbnail.extension;
+  const imgUrl = thumbnail.path + "." + thumbnail.extension;
+
+  const custom_name = localStorage.getItem(id);
+
+  const characterName = custom_name ? custom_name : name;
+  const customFlag = custom_name ? true : false;
+
 
   return (
-    <MainContainer className={"card" + id}
-      onClick={() => history.push("/character", character)}
-    >
-      <ImgContainer src={img_url} alt='' />
+    <MainContainer className={"card" + id} customFlag={customFlag} onClick={() => history.push("/character", character)}>
+      <ImgContainer src={imgUrl} alt='' />
       <Line>
-        <CharacterName>{name.toUpperCase()}</CharacterName>
+        <CharacterName customFlag={customFlag}>{characterName.toUpperCase()}</CharacterName>
       </Line>
     </MainContainer>
   )
 }
-
 
 export default CharacterCard;

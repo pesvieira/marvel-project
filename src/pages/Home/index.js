@@ -44,10 +44,13 @@ const Home = () => {
     setTotalCharacters(total);
 
     setLoading(false);
+
+    window.scrollTo(0, 0)
   }, []);
 
-  //Number zero is the index of first page 
-  /*Params:
+  /*Function: loadMarvelCharacters
+  Number zero is the index of first page 
+    Params:
     limit, 
     page, 
     all, 

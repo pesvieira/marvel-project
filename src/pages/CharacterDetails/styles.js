@@ -14,10 +14,10 @@ export const TitleContainer = styled.div`
   flex: 1;
   width: 100%;
   background-color: #C01309;
-  align-items: center;
-  justify-content: left;
-  border-top: 5px solid #fff;
-  border-bottom: 5px solid #fff;
+  align-items: end;
+  justify-content: space-between;
+  border-top: ${props => props.customFlag ? "5px solid #F9D147" : "5px solid #fff"};
+  border-bottom: ${props => props.customFlag ? "5px solid #F9D147" : "5px solid #fff"};
 `;
 
 export const TitleText = styled.p`
@@ -25,6 +25,11 @@ export const TitleText = styled.p`
   font-size: 44px;
   margin: 30px;
   font-style: italic;
+
+  @media (max-width: 530px) {
+    font-size: 30px;
+    margin-left: 20px;
+  }
 `;
 
 export const ListTitle = styled.p`
@@ -115,4 +120,47 @@ export const UlList = styled.ul`
   }
 `;
 
+export const EditName = styled.p`
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  font-style: italic;
+  padding: 10px 20px;
 
+  @media (max-width: 530px) {
+    font-size: 14px;
+    padding: 15px 15px;
+  }
+`;
+
+export const CustomCharacterNameInput = styled.input`
+  border: 0px;
+  width: auto;
+  outline: none;
+  font-size: 44px;
+  margin: 30px;
+
+  @media (max-width: 530px) {
+    font-size: 30px;
+    width: inherit;
+    margin-left: 20px;
+  }
+`;
+
+export const NoSeriesText = styled.p`
+  color: #fff;
+  font-family: "Fira Sans";
+  font-size: 20px;
+  padding-left: 30px;
+  margin-bottom: 20px;
+
+  @media (max-width: 1020px) {
+    height: auto;
+    padding: 0px;
+  }
+
+  @media (max-width: 530px) {
+    font-size: 18px;
+    padding: 0px;
+  }
+`;

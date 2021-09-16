@@ -19,7 +19,7 @@ export const CharacterName = styled.p`
   position: relative;
   top: 20px;
   left: 15px;
-  color: #FFF;
+  color: ${props => props.customFlag ? "#F9D147" : "#fff"};
   margin: 0;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
@@ -32,7 +32,7 @@ export const MainContainer = styled.div`
   width: 150px;
   height: 250px;
   background-color: #000;
-  border: 1px #fff solid;
+  border: ${props => props.customFlag ? "1px solid #F9D147" : "1px solid #fff"};
   overflow: hidden;
   border-radius: 20px 10px;
   margin: 15px 25px;
